@@ -1,33 +1,47 @@
 package com.library.books.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="book")
 public class Book {
 	
-	private int bookId;
-	private String bookName;
-	private String bookCategory;
 	
-	public Book(int bookId, String bookName, String bookCategory) {
-		this.bookId=bookId;
-		this.bookName=bookName;
-		this.bookCategory=bookCategory;
+	@Id //Specifies the Primary Key of the entity .
+	@GeneratedValue //for auto generation of the ID.
+	private int book_id;
+	private String book_name;
+	private String book_category;
+	
+	Book(){
+		
 	}
 	
-	public int getBookId() {
-		return bookId;
+	public Book(int book_id, String book_name, String book_category) {
+		this.book_id = book_id;
+		this.book_name = book_name;
+		this.book_category = book_category;
 	}
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	
+	public int getBook_id() {
+		return book_id;
 	}
-	public String getBookName() {
-		return bookName;
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
 	}
-	public void setBookName(String bookName) {
-		this.bookName = bookName;
+	public String getBook_name() {
+		return book_name;
 	}
-	public String getBookCategory() {
-		return bookCategory;
+	public void setBook_name(String book_name) {
+		this.book_name = book_name;
 	}
-	public void setBookCategory(String bookCategory) {
-		this.bookCategory = bookCategory;
+	public String getBook_category() {
+		return book_category;
+	}
+	public void setBook_category(String book_category) {
+		this.book_category = book_category;
 	}
 }
