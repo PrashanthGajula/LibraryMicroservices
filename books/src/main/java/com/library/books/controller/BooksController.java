@@ -46,19 +46,18 @@ public class BooksController {
     }
     
     // URL -> /books/searchBooks?searchText=TeluguBook
-	@RequestMapping("/searchBooks")
-	public Books searchBooks(@RequestParam("searchText") final String searchText){
-		List<Book> matchingBooks = booksDao.findBooksByName("%"+ searchText +"%");
-		return new Books(matchingBooks);
-	}
+    @RequestMapping("/searchBooks")
+    public Books searchBooks(@RequestParam("searchText") final String searchText){
+	    List<Book> matchingBooks = booksDao.findBooksByName("%"+ searchText +"%");
+	    return new Books(matchingBooks);
+    }
 	
-	@RequestMapping("/updateBook/{bookId}")
-	public Book updateBook(@PathVariable("bookId") final int bookId, @RequestBody final Book book) {
-		
-		if(booksDao.existsById(bookId)) {
-			book.setBook_id(bookId);
-			return booksDao.save(book);
-		}
-		return null;
-	}
+    @RequestMapping("/updateBook/{bookId}")
+    public Book updateBook(@PathVariable("bookId") final int bookId, @RequestBody final Book book) {	
+        if(booksDao.existsById(bookId)) {
+            book.setBook_id(bookId);
+            return booksDao.save(book);
+        }
+        return null;
+    }
 }
