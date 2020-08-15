@@ -31,6 +31,11 @@ Default way to run a service/java main method. It makes use of the default port 
 Run a service using a different port number:
 - java -Dserver.port=8084 -jar movie-info-service-1.0.0.SNAPSHOT.jar
 
+Running multiple instances of a service in different ports:
+- Instance 1 : java -Dserver.port=8086 -jar movie-info-service-1.0.0.SNAPSHOT.jar
+- Instance 2 : java -Dserver.port=8088 -jar movie-info-service-1.0.0.SNAPSHOT.jar
+- Instance 3 : java -Dserver.port=8090 -jar movie-info-service-1.0.0.SNAPSHOT.jar
+
 ## References
 1. Custom Queries in Spring Boot: https://stackoverflow.com/questions/34303585/writing-custom-queries-in-spring-boot
 2. Microservices 1: https://www.youtube.com/playlist?list=PLqq-6Pq4lTTZSKAFG6aCDVDP86Qx4lNas
