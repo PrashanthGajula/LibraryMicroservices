@@ -10,9 +10,8 @@ CREATE TABLE `library`.`book` (
   `book_category` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`book_id`),
   UNIQUE INDEX `book_name_UNIQUE` (`book_name` ASC) VISIBLE);
-  ```
-  
-  ```
+```
+```
   Table: user
   CREATE TABLE `library`.`user` (
     `id` INT NOT NULL AUTO_INCREMENT,
@@ -21,7 +20,27 @@ CREATE TABLE `library`.`book` (
     `phone` VARCHAR(45) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
-  ```
+```
+```
+  CREATE TABLE `library`.`checkout` (
+  `checkoutid` INT NOT NULL AUTO_INCREMENT,
+  `bookid` INT NOT NULL,
+  `userid` INT NOT NULL,
+  `checkoutdate` DATE NULL,
+  PRIMARY KEY (`checkoutid`),
+  INDEX `bookid_idx` (`bookid` ASC) VISIBLE,
+  INDEX `userid_idx` (`userid` ASC) VISIBLE,
+  CONSTRAINT `bookid`
+    FOREIGN KEY (`bookid`)
+    REFERENCES `library`.`book` (`book_id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `userid`
+    FOREIGN KEY (`userid`)
+    REFERENCES `library`.`user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
+```
   
 ## Running multiple instances of a service in different ports.
 
