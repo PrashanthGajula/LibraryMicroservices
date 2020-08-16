@@ -1,4 +1,4 @@
-package com.library.users.models;
+package com.library.libraryService.model;
 
 import java.util.List;
 

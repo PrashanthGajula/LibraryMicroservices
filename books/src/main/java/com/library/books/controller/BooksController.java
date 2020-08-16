@@ -60,4 +60,17 @@ public class BooksController {
         }
         return null;
     }
+    
+    // URL -> /books/findBooks?ids=1,2,3,4,5...s
+    @RequestMapping("/findBooks")
+    public Books findBooksByID(@RequestParam("ids") final List<Integer> bookIds){
+    	
+    		List<Book> bookList = new ArrayList<>();
+    		
+    		for(Book book : booksDao.findAllById(bookIds)) {
+    			bookList.add(book);
+    		}
+    		
+	    return new Books(bookList);
+    }
 }

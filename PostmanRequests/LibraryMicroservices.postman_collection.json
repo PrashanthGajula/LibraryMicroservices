@@ -133,6 +133,32 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "GetBooksWithIds-CommaSeparated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/books/findBooks?ids=20,22,26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"books",
+								"findBooks"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "20,22,26"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -184,6 +210,336 @@
 							"path": [
 								"users",
 								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersWithIds-CommaSeparated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8083/users/findUsers?ids=37,39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"users",
+								"findUsers"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "37,39"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "localhost_CHECKOUT",
+			"item": [
+				{
+					"name": "GetAllCheckouts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/checkout/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"checkout",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckoutABook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookid\":\"22\",\n    \"userid\":\"37\",\n    \"checkoutdate\":\"2020-08-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8084/checkout/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"checkout",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCheckoutsByUserId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/checkout/CheckoutsByUser?userid=37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"checkout",
+								"CheckoutsByUser"
+							],
+							"query": [
+								{
+									"key": "userid",
+									"value": "37"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCheckoutsByBookId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8084/checkout/CheckoutsByBook?bookid=22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8084",
+							"path": [
+								"checkout",
+								"CheckoutsByBook"
+							],
+							"query": [
+								{
+									"key": "bookid",
+									"value": "22"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "localhost_LIBRARY",
+			"item": [
+				{
+					"name": "GetAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/allBooks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"allBooks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/allUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"allUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Anuradha\",\n    \"email\": \"anuradha@uber.com\",\n    \"phone\": \"990-982-2020\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/library/addUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"addUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsersWithIds-CommaSeparated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/findUsers?ids=40,51",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"findUsers"
+							],
+							"query": [
+								{
+									"key": "ids",
+									"value": "40,51"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllCheckouts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/allCheckouts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"allCheckouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckoutABook",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bookid\":\"22\",\n    \"userid\":\"39\",\n    \"checkoutdate\":\"2020-08-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/library/checkoutBook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"checkoutBook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/searchBooks?searchText=M",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"searchBooks"
+							],
+							"query": [
+								{
+									"key": "searchText",
+									"value": "M"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUserCheckedoutBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/library/GetUserCheckedoutBooks/37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"library",
+								"GetUserCheckedoutBooks",
+								"37"
 							]
 						}
 					},
